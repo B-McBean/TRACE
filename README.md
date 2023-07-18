@@ -30,7 +30,7 @@ We have provided a demo containing example data for DNase-seq in K562 cells and 
 ```bash
 $ ./scripts/init_hmm.py E2F1
 $ ./scripts/dataProcessing.py ./data/E2F1_peak_3.bed ./data/ENCFF826DJP.bam ./data/hg19.fa --prefix ./data/E2F1 --genome hg19
-$ ./TRACE ./data/E2F1_seq.txt ./data/E2F1_slope_2.txt ./data/E2F1_count.txt --initial-model ./data/E2F1_init_model.txt --final-model ./data/E2F1_hmm.txt --peak-file ./data/E2F1_peak_3.bed --motif-file ./data/E2F1_peak_7.bed
+$ ./TRACE ./data/E2F1_seq.txt ./data/E2F1_count.txt ./data/E2F1_slope_2.txt --initial-model ./data/E2F1_init_model.txt --final-model ./data/E2F1_hmm.txt --peak-file ./data/E2F1_peak_3.bed --motif-file ./data/E2F1_peak_7.bed
 ```
 (Note: `ENCFF826DJP.bam` and `hg19.fa` files were not provided.) 
   
@@ -55,10 +55,10 @@ Output:
 - `<slope.file>`: A file contains processed derivatives at each position in regions from `<peak_3.file>`.     
   
 You can set argument `--genome` as `hg19` or `hg38`, default is `hg38`.   
-The default setting will use the DNase-seq based protocol. To use ATAC-seq data instead, include the ```--ATAC-seq``` argument and choose from `pe` (pair-end) (recommended) and `se` (single-end). If you have a preferred output directory or prefix, set argument `--prefix`.  Otherwise all the files will be saved in `./data`.   
+The default setting will use the DNase-seq based protocol. To use ATAC-seq data instead, include the ```--atac-seq``` argument and choose from `pe` (pair-end) (recommended) and `se` (single-end). If you have a preferred output directory or prefix, set argument `--prefix`.  Otherwise all the files will be saved in `./data`.   
     
 ```bash
-$ ./scripts/dataProcessing.py <peak_3.file> <atac-seq.bam.file> <fasta.file> --ATAC-seq pe --prefix ./out/example
+$ ./scripts/dataProcessing.py <peak_3.file> <atac-seq.bam.file> <fasta.file> --atac-seq pe --prefix ./out/example
 ```
   
 ### Build an initial TRACE model
